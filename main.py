@@ -6,7 +6,10 @@ with open("nato_phonetic_alphabet.csv") as nato_file:
     print(nato_dict)
 
 
-#TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 word = input("Enter a word: ").upper()
-output_list = [nato_dict[letter] for letter in word]
-print(output_list)
+try:
+    output_list = [nato_dict[letter] for letter in word]
+except KeyError:
+    print("Sorry, only letters in the alphabet please.")
+else:
+    print(output_list)
